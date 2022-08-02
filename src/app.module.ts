@@ -4,6 +4,7 @@ import { BookmarkModule } from './bookmark/bookmark.module';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
+import { PrismaModule } from './prisma/prisma.module';
 
 
 @Module({
@@ -11,6 +12,7 @@ import configuration from './config/configuration';
     AuthModule,
     UserModule, 
     BookmarkModule, 
+    PrismaModule,
     ConfigModule.forRoot({
       load: [configuration],
     })
