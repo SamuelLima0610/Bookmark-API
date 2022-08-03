@@ -7,8 +7,8 @@ export class AuthController{
     constructor(private authService: AuthService){}
 
     @Post("signin")
-    signIn(@Body() bdo: any){
-        return this.authService.login()
+    signIn(@Body() dto: AuthDto){
+        return this.authService.login(dto);
     }
 
     @Post("signup")
@@ -16,6 +16,6 @@ export class AuthController{
         console.log({
             dto
         })
-        return this.authService.signUp(dto)
+        return this.authService.signUp(dto);
     }
 }
